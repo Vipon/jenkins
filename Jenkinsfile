@@ -6,17 +6,12 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building..'
+                g++ test.cpp -o test
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
-            }
-        }
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
+                ./test
             }
         }
     }
